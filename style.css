@@ -1,0 +1,289 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1f2d, #0a1428);
+            color: #c8aa6e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #f0e6d2;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            color: #a09b8c;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .game-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #091428;
+            border: 2px solid #463714;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+        }
+        
+        .guess-input {
+            width: 100%;
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        #champion-input {
+            flex: 1;
+            padding: 14px 18px;
+            background-color: #0a1428;
+            border: 2px solid #463714;
+            border-radius: 8px 0 0 8px;
+            color: #f0e6d2;
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        #champion-input:focus {
+            border-color: #c8aa6e;
+        }
+        
+        #champion-input::placeholder {
+            color: #5b5a56;
+        }
+        
+        #submit-guess {
+            padding: 14px 24px;
+            background-color: #091428;
+            border: 2px solid #c8aa6e;
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            color: #c8aa6e;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        #submit-guess:hover {
+            background-color: #c8aa6e;
+            color: #091428;
+        }
+        
+        .guesses-container {
+            margin-bottom: 25px;
+            overflow-x: auto;
+        }
+        
+        .guess-row {
+            display: flex;
+            margin-bottom: 10px;
+            background-color: #0a1428;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 700px;
+        }
+        
+        .guess-cell {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            border-right: 1px solid #463714;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+            flex-direction: column;
+        }
+        
+        .guess-cell:last-child {
+            border-right: none;
+        }
+        
+        .guess-header {
+            font-weight: bold;
+            background-color: #463714;
+            color: #f0e6d2;
+            min-height: 50px;
+        }
+        
+        .guess-content {
+            min-height: 50px;
+        }
+        
+        .correct {
+            background-color: #0a6b21;
+            color: white;
+        }
+        
+        .incorrect {
+            background-color: #5c0e16;
+            color: white;
+        }
+        
+        .age-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .arrow {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .arrow-up {
+            color: #c8aa6e;
+        }
+        
+        .arrow-down {
+            color: #c8aa6e;
+        }
+        
+        .hint-container {
+            margin-bottom: 25px;
+            padding: 18px;
+            background-color: #0a1428;
+            border-radius: 8px;
+            border: 1px solid #463714;
+        }
+        
+        .hint-title {
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #f0e6d2;
+            font-size: 1.1rem;
+        }
+        
+        .hint-content {
+            color: #a09b8c;
+            font-size: 1.05rem;
+        }
+        
+        .result-message {
+            text-align: center;
+            margin: 25px 0;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .victory {
+            background-color: #0a6b21;
+            color: white;
+        }
+        
+        .defeat {
+            background-color: #5c0e16;
+            color: white;
+        }
+        
+        .new-game-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 14px 30px;
+            background-color: #091428;
+            border: 2px solid #c8aa6e;
+            border-radius: 8px;
+            color: #c8aa6e;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .new-game-btn:hover {
+            background-color: #c8aa6e;
+            color: #091428;
+        }
+        
+        .attempts-counter {
+            text-align: center;
+            margin-top: 18px;
+            color: #a09b8c;
+            font-size: 1.1rem;
+        }
+        
+        .champion-image {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #463714;
+        }
+        
+        .instructions {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #091428;
+            border-radius: 8px;
+            border: 1px solid #463714;
+            max-width: 800px;
+        }
+        
+        .instructions h3 {
+            color: #f0e6d2;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            color: #a09b8c;
+            display: flex;
+            align-items: center;
+        }
+        
+        .instructions .icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 850px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .game-container {
+                padding: 18px;
+            }
+            
+            .guess-cell {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .champion-image {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .arrow {
+                font-size: 1.2rem;
+            }
+        }

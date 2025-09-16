@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discordle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Discordle</h1>
+        <p class="subtitle">Adivinhe o integrante do servidor baseado nas dicas!</p>
+    </header>
+    
+    <div class="game-container">
+        <div class="guess-input">
+            <input type="text" id="champion-input" placeholder="Digite o nome/nick de alguém..." autocomplete="on">
+            <button id="submit-guess">Enviar</button>
+        </div>
+        
+        <div id="result-message" class="result-message" style="display: none;"></div>
+        
+        <div class="guesses-container">
+            <div class="guess-row guess-header">
+                <div class="guess-cell">Pessoa</div>
+                <div class="guess-cell">Gênero</div>
+                <div class="guess-cell">Idade</div>
+                <div class="guess-cell">Estado que Mora</div>
+                <div class="guess-cell">Já foi Banido?</div>
+                <div class="guess-cell">Servidor de Origem</div>              
+            </div>
+            <div id="guesses"></div>
+        </div>
+        
+        <div class="attempts-counter" id="attempts-counter">Tentativas: 0/8</div>
+        
+        <button id="new-game-btn" class="new-game-btn" style="display: none;">Novo Jogo</button>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
