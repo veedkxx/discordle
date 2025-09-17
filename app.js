@@ -42,7 +42,7 @@ const champions = [
         idade: "22",
         estado: "São Paulo",
         banido: "Não",
-        origem: "Desconhecido",
+        origem: "Mansão Flutuante",
         image: "izuuh.png"
     },
     {
@@ -351,5 +351,6 @@ const champions = [
         
         // Iniciar o jogo
         initGame();
+
 
 
