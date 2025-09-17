@@ -287,4 +287,9 @@
                 font-size: 1.2rem;
             }
         }
-            
+
+        .html, .body {
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+        }
+
