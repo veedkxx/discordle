@@ -1,126 +1,177 @@
 // Base de dados de integrantes
-        const champions = [
-            {
-                name: "Bonnie",
-                gender: "Feminino",
-                idade: "26",
-                estado: "Washington",
-                banido: "Sim",
-                origem: "OCT",
-            },
-            {
-                name: "Turini",
-                gender: "Masculino",
-                idade: "21",
-                estado: "São Paulo",
-                banido: "Sim",
-                origem: "Brasil"
-            },
-            {
-                name: "Veed",
-                gender: "Masculino",
-                idade: "20",
-                estado: "Amapá",
-                banido: "Sim",
-                origem: "OCT"
-            },
-            {
-                name: "Dole",
-                gender: "Masculino",
-                idade: "20",
-                estado: "São Paulo",
-                banido: "Não",
-                origem: "OCT"
-            },
-            {
-                name: "Texugo",
-                gender: "Masculino",
-                idade: "21",
-                estado: "Minas Gerais",
-                banido: "Sim",
-                origem: "OCT"
-            },
-            {
-                name: "Zyero",
-                gender: "Masculino",
-                idade: "23",
-                estado: "Paraná",
-                banido: "Não",
-                origem: "Brasil"
-            },
-            {
-                name: "Tortuguito",
-                gender: "Masculino",
-                idade: "24",
-                estado: "São Paulo",
-                banido: "Não",
-                origem: "Brasil"
-            },
-            {
-                name: "Cerjo",
-                gender: "Masculino",
-                idade: "21",
-                estado: "Rio de Janeiro",
-                banido: "Não",
-                origem: "OCT"
-            },
-            {
-                name: "Piropiko",
-                gender: "Masculino",
-                idade: "22",
-                estado: "Santa Catarina",
-                banido: "Não",
-                origem: "Brasil"
-            },
-            {
-                name: "Ricardo",
-                gender: "Masculino",
-                idade: "23",
-                estado: "Rio Grande do Sul",
-                banido: "Sim",
-                origem: "Brasil"
-            },
-            {
-                name: "Edvan",
-                gender: "Masculino",
-                idade: "24",
-                estado: "Espírito Santo",
-                banido: "Não",
-                origem: "Barzinho"
-            },
-            {
-                name: "Yan",
-                gender: "Masculino",
-                idade: "23",
-                estado: "São Paulo",
-                banido: "Não",
-                origem: "Brasil"
-            },
-            {
-                name: "Chad",
-                gender: "Masculino",
-                idade: "24",
-                estado: "Paraná",
-                banido: "Sim",
-                origem: "Brasil"
-            },
-            {
-                name: "Daniel",
-                gender: "Masculino",
-                idade: "24",
-                estado: "Minas Gerais",
-                banido: "Sim",
-                origem: "Aerópago"
-            },
-            {
-                name: "Lisa",
-                gender: "Feminino",
-                idade: "19",
-                estado: "São Paulo",
-                banido: "Não",
-                origem: "OCT"
-            }
-        ];
+const champions = [
+    {
+        name: "Bonnie",
+        gender: "Feminino",
+        idade: "26",
+        estado: "Washington",
+        banido: "Sim",
+        origem: "OCT",
+        image: "bonnie.png"
+    },
+    {
+        name: "Lisa",
+        gender: "Feminino",
+        idade: "19",
+        estado: "São Paulo",
+        banido: "Não",
+        origem: "OCT",
+        image: "lisa.png"
+    },
+    {
+        name: "Turini",
+        gender: "Masculino",
+        idade: "21",
+        estado: "São Paulo",
+        banido: "Sim",
+        origem: "Brasil",
+        image: "turini.png"
+    },
+    {
+        name: "Dole",
+        gender: "Masculino",
+        idade: "20",
+        estado: "São Paulo",
+        banido: "Não",
+        origem: "OCT",
+        image: "dole.png"
+    },
+    {
+        name: "Izuuh",
+        gender: "Masculino",
+        idade: "22",
+        estado: "São Paulo",
+        banido: "Não",
+        origem: "Desconhecido",
+        image: "izuuh.png"
+    },
+    {
+        name: "Silver",
+        gender: "Masculino",
+        idade: "24",
+        estado: "São Paulo",
+        banido: "Sim",
+        origem: "Brasil",
+        image: "silver.png"
+    },
+    {
+        name: "Tortuguito",
+        gender: "Masculino",
+        idade: "24",
+        estado: "São Paulo",
+        banido: "Não",
+        origem: "Brasil",
+        image: "tortuguito.png"
+    },
+    {
+        name: "Cerjo",
+        gender: "Masculino",
+        idade: "21",
+        estado: "Rio de Janeiro",
+        banido: "Não",
+        origem: "OCT",
+        image: "cerjo.png"
+    },
+    {
+        name: "Piropiko",
+        gender: "Masculino",
+        idade: "22",
+        estado: "Santa Catarina",
+        banido: "Não",
+        origem: "Brasil",
+        image: "piropiko.png"
+    },
+    {
+        name: "Ricardo",
+        gender: "Masculino",
+        idade: "23",
+        estado: "Rio Grande do Sul",
+        banido: "Sim",
+        origem: "Brasil",
+        image: "ricardo.png"
+    },
+    {
+        name: "Edvan",
+        gender: "Masculino",
+        idade: "24",
+        estado: "São Paulo",
+        banido: "Não",
+        origem: "Barzinho",
+        image: "edvan.png"
+    },
+    {
+        name: "Yan",
+        gender: "Masculino",
+        idade: "23",
+        estado: "São Paulo",
+        banido: "Não",
+        origem: "Brasil",
+        image: "yan.png"
+    },
+    {
+        name: "Chad",
+        gender: "Masculino",
+        idade: "24",
+        estado: "Paraná",
+        banido: "Sim",
+        origem: "Brasil",
+        image: "chad.png"
+    },
+    {
+        name: "Daniel",
+        gender: "Masculino",
+        idade: "24",
+        estado: "Minas Gerais",
+        banido: "Sim",
+        origem: "Aerópago",
+        image: "daniel.png"
+    },
+    {
+        name: "Texugo",
+        gender: "Masculino",
+        idade: "21",
+        estado: "Minas Gerais",
+        banido: "Sim",
+        origem: "OCT",
+        image: "texugo.png"
+    },
+    {
+        name: "Chihiro",
+        gender: "Feminino",
+        idade: "24",
+        estado: "São Paulo",
+        banido: "Sim",
+        origem: "Brasil",
+        image: "chihiro.png"
+    },
+    {
+        name: "Savin",
+        gender: "Masculino",
+        idade: "22",
+        estado: "Rio de Janeiro",
+        banido: "Não",
+        origem: "OCT",
+        image: "savin.png"
+    },
+    {
+        name: "Zyero",
+        gender: "Masculino",
+        idade: "23",
+        estado: "Paraná",
+        banido: "Não",
+        origem: "Brasil",
+        image: "zyero.png"
+    },
+    {
+        name: "Veed",
+        gender: "Masculino",
+        idade: "20",
+        estado: "Amapá",
+        banido: "Sim",
+        origem: "OCT",
+        image: "veed.png"
+    }
+];
 
         // Variáveis do jogo
         let targetChampion;
@@ -217,7 +268,7 @@
             if (isImage) {
                 const img = document.createElement('img');
                 // Usando placeholder para imagem (substitua pelo caminho real das imagens)
-                img.src = `./img/${championInput.value}.png`;
+                img.src = `./img/${championInput.value.toLowerCase()}.png`;
                 img.alt = content;
                 img.className = 'champion-image';
                 img.onerror = function() {
