@@ -1,0 +1,224 @@
+{
+  "pessoas": [
+    {
+      "name": "Bonnie",
+      "aliases": ["Bobi", "boni", "boobies", "boobs"],
+      "gender": "Feminino",
+      "idade": "26",
+      "estado": "Washington",
+      "banido": "Sim",
+      "origem": "OCT",
+      "image": "bonnie.png"
+    },
+    {
+      "name": "Lisa",
+      "aliases": ["li"],
+      "gender": "Feminino",
+      "idade": "19",
+      "estado": "São Paulo",
+      "banido": "Não",
+      "origem": "OCT",
+      "image": "lisa.png"
+    },
+    {
+      "name": "Turini",
+      "aliases": ["Viado"],
+      "gender": "Masculino",
+      "idade": "21",
+      "estado": "São Paulo",
+      "banido": "Sim",
+      "origem": "Brasil",
+      "image": "turini.png"
+    },
+    {
+      "name": "Dole",
+      "aliases": ["Doge"],
+      "gender": "Masculino",
+      "idade": "20",
+      "estado": "São Paulo",
+      "banido": "Não",
+      "origem": "OCT",
+      "image": "dole.png"
+    },
+    {
+      "name": "Izuuh",
+      "aliases": ["Izu"],
+      "gender": "Masculino",
+      "idade": "22",
+      "estado": "São Paulo",
+      "banido": "Não",
+      "origem": "Mansão Flutuante",
+      "image": "izuuh.png"
+    },
+    {
+      "name": "Silver",
+      "aliases": ["Siso"],
+      "gender": "Masculino",
+      "idade": "24",
+      "estado": "São Paulo",
+      "banido": "Sim",
+      "origem": "Brasil",
+      "image": "silver.png"
+    },
+    {
+      "name": "Tortuguito",
+      "aliases": ["Tortuga"],
+      "gender": "Masculino",
+      "idade": "24",
+      "estado": "São Paulo",
+      "banido": "Não",
+      "origem": "Brasil",
+      "image": "tortuguito.png"
+    },
+    {
+      "name": "Cerjo",
+      "aliases": [],
+      "gender": "Masculino",
+      "idade": "21",
+      "estado": "Rio de Janeiro",
+      "banido": "Não",
+      "origem": "OCT",
+      "image": "cerjo.png"
+    },
+    {
+      "name": "Piropiko",
+      "aliases": ["Picobiro"],
+      "gender": "Masculino",
+      "idade": "22",
+      "estado": "Rio Grande do Sul",
+      "banido": "Não",
+      "origem": "Brasil",
+      "image": "piropiko.png"
+    },
+    {
+      "name": "Ricardo",
+      "aliases": [],
+      "gender": "Masculino",
+      "idade": "23",
+      "estado": "Rio Grande do Sul",
+      "banido": "Sim",
+      "origem": "Brasil",
+      "image": "ricardo.png"
+    },
+    {
+      "name": "Edvan",
+      "aliases": [],
+      "gender": "Masculino",
+      "idade": "24",
+      "estado": "Espírito Santo",
+      "banido": "Não",
+      "origem": "Mansão Flutuante",
+      "image": "edvan.png"
+    },
+    {
+      "name": "Yan",
+      "aliases": ["kaina", "ia"],
+      "gender": "Masculino",
+      "idade": "23",
+      "estado": "São Paulo",
+      "banido": "Não",
+      "origem": "Brasil",
+      "image": "yan.png"
+    },
+    {
+      "name": "Chad",
+      "aliases": ["lechadono", "tulio3x"],
+      "gender": "Masculino",
+      "idade": "24",
+      "estado": "Paraná",
+      "banido": "Sim",
+      "origem": "Brasil",
+      "image": "chad.png"
+    },
+    {
+      "name": "Daniel",
+      "aliases": ["EtheriousZX", "sZX"],
+      "gender": "Masculino",
+      "idade": "24",
+      "estado": "Minas Gerais",
+      "banido": "Sim",
+      "origem": "Aerópago",
+      "image": "daniel.png"
+    },
+    {
+      "name": "Texugo",
+      "aliases": ["Tex", "TexugoBoladão"],
+      "gender": "Masculino",
+      "idade": "21",
+      "estado": "Minas Gerais",
+      "banido": "Sim",
+      "origem": "OCT",
+      "image": "texugo.png"
+    },
+    {
+      "name": "Chihiro",
+      "aliases": ["Chi"],
+      "gender": "Feminino",
+      "idade": "24",
+      "estado": "São Paulo",
+      "banido": "Sim",
+      "origem": "Brasil",
+      "image": "chihiro.png"
+    },
+    {
+      "name": "Savin",
+      "aliases": ["Aizen"],
+      "gender": "Masculino",
+      "idade": "22",
+      "estado": "Rio de Janeiro",
+      "banido": "Não",
+      "origem": "OCT",
+      "image": "savin.png"
+    },
+    {
+      "name": "Zyero",
+      "aliases": ["gostosa", "cinzeiro"],
+      "gender": "Masculino",
+      "idade": "23",
+      "estado": "Paraná",
+      "banido": "Não",
+      "origem": "Brasil",
+      "image": "zyero.png"
+    },
+    {
+      "name": "Veed",
+      "aliases": ["Vid", "vidi"],
+      "gender": "Masculino",
+      "idade": "20",
+      "estado": "Amapá",
+      "banido": "Sim",
+      "origem": "OCT, TVS",
+      "image": "veed.png"
+    },
+    {
+      "name": "Natyel",
+      "aliases": ["Careca", "Xibiu", "LivingFailure"],
+      "gender": "Masculino",
+      "idade": "24",
+      "estado": "Ceará",
+      "banido": "Não",
+      "origem": "TVS",
+      "image": "natyel.jpg"
+    },
+    {
+      "name": "Leo",
+      "aliases": ["Leozin", "Adashin", "Adashiz", "Adashi"],
+      "gender": "Masculino",
+      "idade": "28",
+      "estado": "São Paulo",
+      "banido": "Não",
+      "origem": "OCT",
+      "image": "leo.jpg"
+    },
+    {
+      "name": "Lebron",
+      "aliases": ["Japinha do Ipatinga", "MVP do lol", "Pedro James"],
+      "gender": "Masculino",
+      "idade": "21",
+      "estado": "Minas Gerais",
+      "banido": "Não",
+      "origem": "TVS",
+      "image": "lebron.jpg"
+    }
+  ]
+}
