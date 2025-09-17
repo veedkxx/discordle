@@ -274,3 +274,8 @@
                 background: #c8aa6e;
                 border-radius: 3px;
         }
+
+            .partial {
+                background-color: #f2c94c;
+                color: #000;
+        }
