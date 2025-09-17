@@ -76,7 +76,7 @@ const champions = [
         name: "Piropiko",
         gender: "Masculino",
         idade: "22",
-        estado: "Santa Catarina",
+        estado: "Rio Grande do Sul",
         banido: "Não",
         origem: "Brasil",
         image: "piropiko.png"
@@ -94,7 +94,7 @@ const champions = [
         name: "Edvan",
         gender: "Masculino",
         idade: "24",
-        estado: "São Paulo",
+        estado: "Espírito Santo",
         banido: "Não",
         origem: "Barzinho",
         image: "edvan.png"
@@ -351,3 +351,4 @@ const champions = [
         
         // Iniciar o jogo
         initGame();
+
