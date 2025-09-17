@@ -147,7 +147,7 @@ const pessoas = [
     {
         name: "Savin",
         gender: "Masculino",
-        idade: "22",
+        idade: "21",
         estado: "Rio de Janeiro",
         banido: "Não",
         origem: "OCT",
@@ -347,3 +347,4 @@ const pessoas = [
         
         // Iniciar o jogo
         initGame();
+
