@@ -1,5 +1,5 @@
 // Base de dados de integrantes
-const champions = [
+const pessoas = [
     {
         name: "Bonnie",
         gender: "Feminino",
@@ -174,25 +174,24 @@ const champions = [
 ];
 
         // Variáveis do jogo
-        let targetChampion;
+        let targetPerson;
         let attempts = 0;
-        const maxAttempts = 8;
+        const maxAttempts = 6;
         let gameOver = false;
         
         // Elementos do DOM
-        const championInput = document.getElementById('champion-input');
+        const personInput = document.getElementById('person-input');
         const submitGuess = document.getElementById('submit-guess');
         const guessesContainer = document.getElementById('guesses');
         const attemptsCounter = document.getElementById('attempts-counter');
         const resultMessage = document.getElementById('result-message');
         const newGameBtn = document.getElementById('new-game-btn');
-        const currentHint = document.getElementById('current-hint');
         
         // Inicializar o jogo
         function initGame() {
             // Selecionar um integrante aleatório
-            targetChampion = champions[Math.floor(Math.random() * champions.length)];
-            console.log(targetChampion);
+            targetPerson = pessoas[Math.floor(Math.random() * pessoas.length)];
+            console.log(targetPerson);
             
             attempts = 0;
             gameOver = false;
@@ -200,30 +199,30 @@ const champions = [
             attemptsCounter.textContent = `Tentativas: ${attempts}/${maxAttempts}`;
             resultMessage.style.display = 'none';
             newGameBtn.style.display = 'none';
-            championInput.disabled = false;
+            personInput.disabled = false;
             submitGuess.disabled = false;
-            championInput.focus();
+            personInput.focus();
             
             // Atualizar a dica
-            currentHint.textContent = targetChampion.hint;
-            console.log(targetChampion);
+            currentHint.textContent = targetPerson.hint;
+            console.log(targetPerson);
         }
         
         // Verificar o palpite
         function checkGuess() {
             if (gameOver) return;
             
-            const guess = championInput.value.trim();
+            const guess = personInput.value.trim();
             if (!guess) return;
             
             // Verificar se o palpite é válido
-            const guessedChampion = champions.find(champ => 
+            const guessedPerson = pessoas.find(champ => 
                 champ.name.toLowerCase() === guess.toLowerCase()
             );
             
-            if (!guessedChampion) {
+            if (!guessedPerson) {
                 alert("Integrante não reconhecido. Tente outro nome.");
-                championInput.value = '';
+                personInput.value = '';
                 return;
             }
             
@@ -235,29 +234,29 @@ const champions = [
             guessRow.className = 'guess-row';
             
             // Adicionar células com os dados do palpite
-            addGuessCell(guessRow, guessedChampion.name, guessedChampion.name === targetChampion.name ? 'correct' : 'incorrect', true);
-            addGuessCell(guessRow, guessedChampion.gender, guessedChampion.gender === targetChampion.gender ? 'correct' : 'incorrect');
+            addGuessCell(guessRow, guessedPerson.name, guessedPerson.name === targetPerson.name ? 'correct' : 'incorrect', true);
+            addGuessCell(guessRow, guessedPerson.gender, guessedPerson.gender === targetPerson.gender ? 'correct' : 'incorrect');
             
             // Verificação especial para idade (com setas)
-            const guessedAge = parseInt(guessedChampion.idade);
-            const targetAge = parseInt(targetChampion.idade);
+            const guessedAge = parseInt(guessedPerson.idade);
+            const targetAge = parseInt(targetPerson.idade);
             
-            addAgeCell(guessRow, guessedChampion.idade, guessedAge, targetAge);
+            addAgeCell(guessRow, guessedPerson.idade, guessedAge, targetAge);
             
-            addGuessCell(guessRow, guessedChampion.estado, guessedChampion.estado === targetChampion.estado ? 'correct' : 'incorrect');
-            addGuessCell(guessRow, guessedChampion.banido, guessedChampion.banido === targetChampion.banido ? 'correct' : 'incorrect');
-            addGuessCell(guessRow, guessedChampion.origem, guessedChampion.origem === targetChampion.origem ? 'correct' : 'incorrect');
+            addGuessCell(guessRow, guessedPerson.estado, guessedPerson.estado === targetPerson.estado ? 'correct' : 'incorrect');
+            addGuessCell(guessRow, guessedPerson.banido, guessedPerson.banido === targetPerson.banido ? 'correct' : 'incorrect');
+            addGuessCell(guessRow, guessedPerson.origem, guessedPerson.origem === targetPerson.origem ? 'correct' : 'incorrect');
             
             guessesContainer.appendChild(guessRow);
             
             // Verificar vitória
-            if (guess.toLowerCase() === targetChampion.name.toLowerCase()) {
+            if (guess.toLowerCase() === targetPerson.name.toLowerCase()) {
                 endGame(true);
             } else if (attempts >= maxAttempts) {
                 endGame(false);
             }
             
-            championInput.value = '';
+            personInput.value = '';
         }
         
         // Adicionar célula à linha de palpite
@@ -267,10 +266,9 @@ const champions = [
             
             if (isImage) {
                 const img = document.createElement('img');
-                // Usando placeholder para imagem (substitua pelo caminho real das imagens)
-                img.src = `./img/${championInput.value.toLowerCase()}.png`;
+                img.src = `./img/${personInput.value.toLowerCase()}.png`;
                 img.alt = content;
-                img.className = 'champion-image';
+                img.className = 'person-image';
                 img.onerror = function() {
                     this.style.display = 'none';
                     const text = document.createElement('span');
@@ -306,10 +304,8 @@ const champions = [
                 cell.classList.add('incorrect');
                 
                 if (guessedAge > targetAge) {
-                    arrow.classList.add('arrow-up');
                     arrow.textContent = '↓';
                 } else {
-                    arrow.classList.add('arrow-down');
                     arrow.textContent = '↑';
                 }
                 
@@ -328,20 +324,20 @@ const champions = [
                 resultMessage.textContent = `Parabéns! Você adivinhou em ${attempts} tentativa(s)!`;
                 resultMessage.className = 'result-message victory';
             } else {
-                resultMessage.textContent = `Fim de jogo! O integrante era ${targetChampion.name}.`;
+                resultMessage.textContent = `Fim de jogo! O integrante era ${targetPerson.name}.`;
                 resultMessage.className = 'result-message defeat';
             }
             
             resultMessage.style.display = 'block';
             newGameBtn.style.display = 'block';
-            championInput.disabled = true;
+            personInput.disabled = true;
             submitGuess.disabled = true;
         }
         
         // Event Listeners
         submitGuess.addEventListener('click', checkGuess);
         
-        championInput.addEventListener('keypress', (e) => {
+        personInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 checkGuess();
             }
@@ -351,15 +347,3 @@ const champions = [
         
         // Iniciar o jogo
         initGame();
-
-        // Resize da página para mobile     
-        const resizeOps = () => {
-            document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
-        };
-
-        resizeOps();
-        window.addEventListener("resize", resizeOps);
-
-
-
-
