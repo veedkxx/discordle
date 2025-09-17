@@ -96,7 +96,7 @@ const champions = [
         idade: "24",
         estado: "Espírito Santo",
         banido: "Não",
-        origem: "Barzinho",
+        origem: "Mansão Flutuante",
         image: "edvan.png"
     },
     {
@@ -351,4 +351,5 @@ const champions = [
         
         // Iniciar o jogo
         initGame();
+
 
