@@ -52,7 +52,7 @@
             margin-bottom: 25px;
         }
         
-        #champion-input {
+        #person-input {
             flex: 1;
             padding: 14px 18px;
             background-color: #0a1428;
@@ -64,11 +64,11 @@
             transition: border-color 0.3s;
         }
         
-        #champion-input:focus {
+        #person-input:focus {
             border-color: #c8aa6e;
         }
         
-        #champion-input::placeholder {
+        #person-input::placeholder {
             color: #5b5a56;
         }
         
@@ -150,36 +150,9 @@
         .arrow {
             font-size: 1.5rem;
             font-weight: bold;
-        }
-        
-        .arrow-up {
             color: #c8aa6e;
         }
-        
-        .arrow-down {
-            color: #c8aa6e;
-        }
-        
-        .hint-container {
-            margin-bottom: 25px;
-            padding: 18px;
-            background-color: #0a1428;
-            border-radius: 8px;
-            border: 1px solid #463714;
-        }
-        
-        .hint-title {
-            font-weight: bold;
-            margin-bottom: 12px;
-            color: #f0e6d2;
-            font-size: 1.1rem;
-        }
-        
-        .hint-content {
-            color: #a09b8c;
-            font-size: 1.05rem;
-        }
-        
+ 
         .result-message {
             text-align: center;
             margin: 25px 0;
@@ -225,7 +198,7 @@
             font-size: 1.1rem;
         }
         
-        .champion-image {
+        .person-image {
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -278,7 +251,7 @@
                 font-size: 0.9rem;
             }
             
-            .champion-image {
+            .person-image {
                 width: 35px;
                 height: 35px;
             }
@@ -301,4 +274,3 @@
                 background: #c8aa6e;
                 border-radius: 3px;
         }
-
