@@ -352,5 +352,14 @@ const champions = [
         // Iniciar o jogo
         initGame();
 
+        // Resize da página para mobile     
+        const resizeOps = () => {
+            document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+        };
+
+        resizeOps();
+        window.addEventListener("resize", resizeOps);
+
+
 
 
