@@ -1,180 +1,17 @@
-// Base de dados de integrantes
-const pessoas = [
-    {
-        name: "Bonnie",
-        aliases: ["Bobi"],
-        gender: "Feminino",
-        idade: "26",
-        estado: "Washington",
-        banido: "Sim",
-        origem: "OCT",
-        image: "bonnie.png"
-    },
-    {
-        name: "Lisa",
-        gender: "Feminino",
-        idade: "19",
-        estado: "São Paulo",
-        banido: "Não",
-        origem: "OCT",
-        image: "lisa.png"
-    },
-    {
-        name: "Turini",
-        aliases: ["Viado"],
-        gender: "Masculino",
-        idade: "21",
-        estado: "São Paulo",
-        banido: "Sim",
-        origem: "Brasil",
-        image: "turini.png"
-    },
-    {
-        name: "Dole",
-        gender: "Masculino",
-        idade: "20",
-        estado: "São Paulo",
-        banido: "Não",
-        origem: "OCT",
-        image: "dole.png"
-    },
-    {
-        name: "Izuuh",
-        gender: "Masculino",
-        idade: "22",
-        estado: "São Paulo",
-        banido: "Não",
-        origem: "Mansão Flutuante",
-        image: "izuuh.png"
-    },
-    {
-        name: "Silver",
-        gender: "Masculino",
-        idade: "24",
-        estado: "São Paulo",
-        banido: "Sim",
-        origem: "Brasil",
-        image: "silver.png"
-    },
-    {
-        name: "Tortuguito",
-        gender: "Masculino",
-        idade: "24",
-        estado: "São Paulo",
-        banido: "Não",
-        origem: "Brasil",
-        image: "tortuguito.png"
-    },
-    {
-        name: "Cerjo",
-        gender: "Masculino",
-        idade: "21",
-        estado: "Rio de Janeiro",
-        banido: "Não",
-        origem: "OCT",
-        image: "cerjo.png"
-    },
-    {
-        name: "Piropiko",
-        gender: "Masculino",
-        idade: "22",
-        estado: "Rio Grande do Sul",
-        banido: "Não",
-        origem: "Brasil",
-        image: "piropiko.png"
-    },
-    {
-        name: "Ricardo",
-        gender: "Masculino",
-        idade: "23",
-        estado: "Rio Grande do Sul",
-        banido: "Sim",
-        origem: "Brasil",
-        image: "ricardo.png"
-    },
-    {
-        name: "Edvan",
-        gender: "Masculino",
-        idade: "24",
-        estado: "Espírito Santo",
-        banido: "Não",
-        origem: "Mansão Flutuante",
-        image: "edvan.png"
-    },
-    {
-        name: "Yan",
-        gender: "Masculino",
-        idade: "23",
-        estado: "São Paulo",
-        banido: "Não",
-        origem: "Brasil",
-        image: "yan.png"
-    },
-    {
-        name: "Chad",
-        gender: "Masculino",
-        idade: "24",
-        estado: "Paraná",
-        banido: "Sim",
-        origem: "Brasil",
-        image: "chad.png"
-    },
-    {
-        name: "Daniel",
-        gender: "Masculino",
-        idade: "24",
-        estado: "Minas Gerais",
-        banido: "Sim",
-        origem: "Aerópago",
-        image: "daniel.png"
-    },
-    {
-        name: "Texugo",
-        gender: "Masculino",
-        idade: "21",
-        estado: "Minas Gerais",
-        banido: "Sim",
-        origem: "OCT",
-        image: "texugo.png"
-    },
-    {
-        name: "Chihiro",
-        gender: "Feminino",
-        idade: "24",
-        estado: "São Paulo",
-        banido: "Sim",
-        origem: "Brasil",
-        image: "chihiro.png"
-    },
-    {
-        name: "Savin",
-        gender: "Masculino",
-        idade: "22",
-        estado: "Rio de Janeiro",
-        banido: "Não",
-        origem: "OCT",
-        image: "savin.png"
-    },
-    {
-        name: "Zyero",
-        aliases: ["gostosa", "cinzeiro"],
-        gender: "Masculino",
-        idade: "23",
-        estado: "Paraná",
-        banido: "Não",
-        origem: "Brasil",
-        image: "zyero.png"
-    },
-    {
-        name: "Veed",
-        gender: "Masculino",
-        idade: "20",
-        estado: "Amapá",
-        banido: "Sim",
-        origem: "OCT",
-        image: "veed.png"
-    }
-];
+        let pessoas = [];
+
+        async function carregarPersonagens() {
+        try {
+            const response = await fetch('personagens.json');
+            const data = await response.json();
+            pessoas = data.pessoas;
+            initGame();
+        } catch (error) {
+            console.error('Erro ao carregar personagens:', error);
+        }
+        }
+
+        carregarPersonagens();
 
         // Variáveis do jogo
         let targetPerson;
@@ -206,7 +43,7 @@ const pessoas = [
             submitGuess.disabled = false;
             personInput.focus();
         }
-        
+
 // Verificar o palpite
 function checkGuess() {
     if (gameOver) return;
@@ -256,7 +93,7 @@ function checkGuess() {
     
     addGuessCell(guessRow, guessedPerson.estado, guessedPerson.estado === targetPerson.estado ? 'correct' : 'incorrect');
     addGuessCell(guessRow, guessedPerson.banido, guessedPerson.banido === targetPerson.banido ? 'correct' : 'incorrect');
-    addGuessCell(guessRow, guessedPerson.origem, guessedPerson.origem === targetPerson.origem ? 'correct' : 'incorrect');
+    addGuessCell(guessRow, guessedPerson.origem, checkSimilarOrigin(guessedPerson.origem, targetPerson.origem));
     
     guessesContainer.appendChild(guessRow);
     
@@ -268,6 +105,24 @@ function checkGuess() {
     }
     
     personInput.value = '';
+}
+// Função para verificar se as origens são "meio corretas"
+function checkSimilarOrigin(origem1, origem2) {
+    // Se forem exatamente iguais, retorna 'correct'
+    if (origem1 === origem2) return 'correct';
+    
+    // Divide as origens por vírgula e espaço para verificar múltiplas origens
+    const origens1 = origem1.split(', ');
+    const origens2 = origem2.split(', ');
+    
+    // Verifica se há alguma origem em comum
+    const hasCommonOrigin = origens1.some(origem => origens2.includes(origem));
+    
+    // Se houver origem em comum, retorna 'partial'
+    if (hasCommonOrigin) return 'partial';
+    
+    // Se não houver nenhuma correspondência, retorna 'incorrect'
+    return 'incorrect';
 }
         
         // Adicionar célula à linha de palpite
