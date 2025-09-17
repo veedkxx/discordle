@@ -2,6 +2,7 @@
 const pessoas = [
     {
         name: "Bonnie",
+        aliases: ["Bobi"],
         gender: "Feminino",
         idade: "26",
         estado: "Washington",
@@ -20,6 +21,7 @@ const pessoas = [
     },
     {
         name: "Turini",
+        aliases: ["Viado"],
         gender: "Masculino",
         idade: "21",
         estado: "São Paulo",
@@ -147,7 +149,7 @@ const pessoas = [
     {
         name: "Savin",
         gender: "Masculino",
-        idade: "21",
+        idade: "22",
         estado: "Rio de Janeiro",
         banido: "Não",
         origem: "OCT",
@@ -155,6 +157,7 @@ const pessoas = [
     },
     {
         name: "Zyero",
+        aliases: ["gostosa", "cinzeiro"],
         gender: "Masculino",
         idade: "23",
         estado: "Paraná",
@@ -202,83 +205,102 @@ const pessoas = [
             personInput.disabled = false;
             submitGuess.disabled = false;
             personInput.focus();
-            
-            // Atualizar a dica
-            currentHint.textContent = targetPerson.hint;
-            console.log(targetPerson);
         }
         
-        // Verificar o palpite
-        function checkGuess() {
-            if (gameOver) return;
-            
-            const guess = personInput.value.trim();
-            if (!guess) return;
-            
-            // Verificar se o palpite é válido
-            const guessedPerson = pessoas.find(champ => 
-                champ.name.toLowerCase() === guess.toLowerCase()
-            );
-            
-            if (!guessedPerson) {
-                alert("Integrante não reconhecido. Tente outro nome.");
-                personInput.value = '';
-                return;
-            }
-            
-            attempts++;
-            attemptsCounter.textContent = `Tentativas: ${attempts}/${maxAttempts}`;
-            
-            // Criar linha de palpite
-            const guessRow = document.createElement('div');
-            guessRow.className = 'guess-row';
-            
-            // Adicionar células com os dados do palpite
-            addGuessCell(guessRow, guessedPerson.name, guessedPerson.name === targetPerson.name ? 'correct' : 'incorrect', true);
-            addGuessCell(guessRow, guessedPerson.gender, guessedPerson.gender === targetPerson.gender ? 'correct' : 'incorrect');
-            
-            // Verificação especial para idade (com setas)
-            const guessedAge = parseInt(guessedPerson.idade);
-            const targetAge = parseInt(targetPerson.idade);
-            
-            addAgeCell(guessRow, guessedPerson.idade, guessedAge, targetAge);
-            
-            addGuessCell(guessRow, guessedPerson.estado, guessedPerson.estado === targetPerson.estado ? 'correct' : 'incorrect');
-            addGuessCell(guessRow, guessedPerson.banido, guessedPerson.banido === targetPerson.banido ? 'correct' : 'incorrect');
-            addGuessCell(guessRow, guessedPerson.origem, guessedPerson.origem === targetPerson.origem ? 'correct' : 'incorrect');
-            
-            guessesContainer.appendChild(guessRow);
-            
-            // Verificar vitória
-            if (guess.toLowerCase() === targetPerson.name.toLowerCase()) {
-                endGame(true);
-            } else if (attempts >= maxAttempts) {
-                endGame(false);
-            }
-            
-            personInput.value = '';
+// Verificar o palpite
+function checkGuess() {
+    if (gameOver) return;
+    
+    const guess = personInput.value.trim();
+    if (!guess) return;
+    
+    // Verificar se o palpite é válido (nome ou alias)
+    const guessedPerson = pessoas.find(person => {
+        // Verifica se é o nome principal
+        if (person.name.toLowerCase() === guess.toLowerCase()) {
+            return true;
         }
+        
+        // Verifica se é algum dos aliases
+        if (person.aliases && person.aliases.some(alias => 
+            alias.toLowerCase() === guess.toLowerCase())) {
+            return true;
+        }
+        
+        return false;
+    });
+    
+    if (!guessedPerson) {
+        alert("Integrante não reconhecido. Tente outro nome.");
+        personInput.value = '';
+        return;
+    }
+    
+    // Restante da função permanece igual...
+    attempts++;
+    attemptsCounter.textContent = `Tentativas: ${attempts}/${maxAttempts}`;
+    
+    // Criar linha de palpite
+    const guessRow = document.createElement('div');
+    guessRow.className = 'guess-row';
+    
+    // Adicionar células com os dados do palpite
+    addGuessCell(guessRow, guessedPerson.name, guessedPerson.name === targetPerson.name ? 'correct' : 'incorrect', true);
+    addGuessCell(guessRow, guessedPerson.gender, guessedPerson.gender === targetPerson.gender ? 'correct' : 'incorrect');
+    
+    // Verificação especial para idade (com setas)
+    const guessedAge = parseInt(guessedPerson.idade);
+    const targetAge = parseInt(targetPerson.idade);
+    
+    addAgeCell(guessRow, guessedPerson.idade, guessedAge, targetAge);
+    
+    addGuessCell(guessRow, guessedPerson.estado, guessedPerson.estado === targetPerson.estado ? 'correct' : 'incorrect');
+    addGuessCell(guessRow, guessedPerson.banido, guessedPerson.banido === targetPerson.banido ? 'correct' : 'incorrect');
+    addGuessCell(guessRow, guessedPerson.origem, guessedPerson.origem === targetPerson.origem ? 'correct' : 'incorrect');
+    
+    guessesContainer.appendChild(guessRow);
+    
+    // Verificar vitória (agora comparando com o nome principal)
+    if (guessedPerson.name.toLowerCase() === targetPerson.name.toLowerCase()) {
+        endGame(true);
+    } else if (attempts >= maxAttempts) {
+        endGame(false);
+    }
+    
+    personInput.value = '';
+}
         
         // Adicionar célula à linha de palpite
         function addGuessCell(row, content, status, isImage = false) {
             const cell = document.createElement('div');
             cell.className = `guess-cell guess-content ${status}`;
             
-            if (isImage) {
-                const img = document.createElement('img');
-                img.src = `./img/${personInput.value.toLowerCase()}.png`;
-                img.alt = content;
-                img.className = 'person-image';
-                img.onerror = function() {
-                    this.style.display = 'none';
-                    const text = document.createElement('span');
-                    text.textContent = content;
-                    cell.appendChild(text);
-                };
-                cell.appendChild(img);
+        if (isImage) {
+            const img = document.createElement('img');
+            
+            // Encontrar a pessoa correspondente para obter a imagem correta
+            const person = pessoas.find(p => p.name === content);
+            
+            // Usar a propriedade image da pessoa, se disponível
+            if (person && person.image) {
+                img.src = `./img/${person.image}`;
             } else {
-                cell.textContent = content;
+                // Fallback para o nome (em minúsculas) se não houver propriedade image
+                img.src = `./img/${content.toLowerCase()}.png`;
             }
+            
+            img.alt = content;
+            img.className = 'person-image';
+            img.onerror = function() {
+                this.style.display = 'none';
+                const text = document.createElement('span');
+                text.textContent = content;
+                cell.appendChild(text);
+            };
+            cell.appendChild(img);
+        } else {
+            cell.textContent = content;
+        }
             
             row.appendChild(cell);
         }
@@ -347,4 +369,3 @@ const pessoas = [
         
         // Iniciar o jogo
         initGame();
-
