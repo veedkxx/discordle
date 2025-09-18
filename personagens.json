@@ -239,6 +239,16 @@
       "banido": "Sim",
       "origem": "sMoon",
       "image": "purple.png"
+    },
+    {
+      "name": "Hipster",
+      "aliases": ["Gabriel Longo", "HipsterMineiro", "HipsterManeiro"],
+      "gender": "Masculino",
+      "idade": "21",
+      "estado": "Minas Gerais",
+      "banido": "Sim",
+      "origem": "sMoon",
+      "image": "hipster.png"
     }
   ]
 }
