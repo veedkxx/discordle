@@ -147,7 +147,7 @@
       "idade": "21",
       "estado": "Minas Gerais",
       "banido": "Sim",
-      "origem": "OCT",
+      "origem": "sMoon",
       "image": "texugo.png"
     },
     {
@@ -219,6 +219,26 @@
       "banido": "Não",
       "origem": "TVS",
       "image": "lebron.jpg"
+    },
+    {
+      "name": "Caneca",
+      "aliases": ["Alex", "alx", "alexandre", "Xicara", "Xícara"],
+      "gender": "Masculino",
+      "idade": "20",
+      "estado": "Minas Gerais",
+      "banido": "Sim",
+      "origem": "sMoon",
+      "image": "caneca.jpg"
+    },
+    {
+      "name": "Purple",
+      "aliases": [],
+      "gender": "Masculino",
+      "idade": "18",
+      "estado": "São Paulo",
+      "banido": "Sim",
+      "origem": "sMoon",
+      "image": "purple.png"
     }
   ]
 }
