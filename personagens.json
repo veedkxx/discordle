@@ -232,23 +232,13 @@
     },
     {
       "name": "Purple",
-      "aliases": [],
+      "aliases": ["purplefg"],
       "gender": "Masculino",
       "idade": "18",
       "estado": "São Paulo",
       "banido": "Sim",
       "origem": "sMoon",
       "image": "purple.png"
-    },
-    {
-      "name": "Hipster",
-      "aliases": ["Gabriel Longo", "HipsterMineiro", "HipsterManeiro"],
-      "gender": "Masculino",
-      "idade": "21",
-      "estado": "Minas Gerais",
-      "banido": "Sim",
-      "origem": "sMoon",
-      "image": "hipster.png"
     }
   ]
 }
