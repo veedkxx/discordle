@@ -2,7 +2,7 @@
   "pessoas": [
     {
       "name": "Bonnie",
-      "aliases": ["Bobi", "boni", "boobies", "boobs"],
+      "aliases": ["Bobi", "bobi"],
       "gender": "Feminino",
       "idade": "26",
       "estado": "Washington",
@@ -22,7 +22,7 @@
     },
     {
       "name": "Turini",
-      "aliases": ["Viado"],
+      "aliases": ["Felipe"],
       "gender": "Masculino",
       "idade": "21",
       "estado": "São Paulo",
@@ -114,7 +114,7 @@
       "name": "Yan",
       "aliases": ["kaina", "ia"],
       "gender": "Masculino",
-      "idade": "23",
+      "idade": "24",
       "estado": "São Paulo",
       "banido": "Não",
       "origem": "Brasil",
@@ -182,7 +182,7 @@
     },
     {
       "name": "Veed",
-      "aliases": ["Vid", "vidi"],
+      "aliases": ["Vid", "vidi", "Davi"],
       "gender": "Masculino",
       "idade": "20",
       "estado": "Amapá",
